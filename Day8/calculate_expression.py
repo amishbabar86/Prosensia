@@ -3,3 +3,9 @@ def calculate_expression():
 
 # Calling the function and printing the result
 print(calculate_expression())
+
+def calculate_averagepay(hours, pay)
+    if hours > 40
+    overtime= 40-hours
+    
+calculate_averagepay()
