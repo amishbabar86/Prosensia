@@ -1,0 +1,40 @@
+def get_questions():
+    """
+    Returns a list of question-answer pairs as tuples.
+    """
+    questions = [
+        ("What is the capital of France?", "Paris"),
+        ("What is 2 + 2?", "4"),
+        ("What is the largest planet in our solar system?", "Jupiter"),
+        ("What is the chemical symbol for water?", "H2O"),
+        ("Who wrote 'Hamlet'?", "Shakespeare")
+    ]
+    return questions
+
+def ask_question(question, correct_answer):
+    """
+    Asks a single question to the user and checks if the answer is correct.
+    Returns 1 if correct, 0 otherwise.
+    """
+    user_answer = input(question + " ")
+    if user_answer.strip().lower() == correct_answer.lower():
+        print("Correct!\n")
+        return 1
+    else:
+        print(f"Incorrect. The correct answer is {correct_answer}.\n")
+        return 0
+
+def main():
+    """
+    Main function to run the quiz game.
+    """
+    score = 0
+    questions = get_questions()
+
+    for question, answer in questions:
+        score += ask_question(question, answer)
+
+    print(f"Quiz Over! Your final score is: {score}/{len(questions)}")
+
+if __name__ == "__main__":
+    main()
